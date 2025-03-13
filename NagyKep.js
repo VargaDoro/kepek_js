@@ -22,6 +22,11 @@ export default class NagyKep {
     }
 
     esemenykezelok(){
+        window.addEventListener("kivalaszt", (event)=>{
+            console.log(event.detail)
+            this.#aktIndex=event.detail;
+            new KiemeltKep(this.#lista[this.#aktIndex].kep, this.#lista[this.#aktIndex].cim, this.nagyKepElem);
+        })
         this.gombBal.addEventListener("click", ()=> {
             this.#aktIndex--;
             this.#aktIndex < 0 ? (this.#aktIndex = this.#lista.length -1) : (this.#aktIndex = this.#aktIndex);
