@@ -1,4 +1,4 @@
-export default class Kep {
+export default class KiemeltKep {
     #elUt;
     #cim;
     constructor(elUt, cim, szulelem){
@@ -10,8 +10,9 @@ export default class Kep {
 
     megjelenit() {
         let html = `<div class="kep">
+                        <h3>${this.#cim}</h3>
                         <img src="${this.#elUt}" alt="${this.#cim}">
                     </div>`;
-        this.szulelem.innerHTML += html;
+        this.szulelem.innerHTML = html;
     }
 }
